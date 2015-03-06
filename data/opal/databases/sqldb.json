@@ -1,0 +1,8 @@
+{"usedForIdentifiers": false, "name": "sqldb", "usage": "STORAGE", "defaultStorage": false, "sqlSettings": {
+    "url": "jdbc:mysql://localhost:3306/opal_data",
+    "driverClass": "com.mysql.jdbc.Driver",
+    "username": "opaluser",
+    "password": "opalpass",
+    "properties": "",
+    "sqlSchema": "HIBERNATE"
+}}

@@ -1,0 +1,27 @@
+# variables
+MYSQL_ROOT_PWD='rootpass'
+
+MYSQL_OPAL_USER='opaluser'
+MYSQL_OPAL_PWD='opalpass'
+
+OPAL_PWD='password'
+
+PROJECT_DIR='../data/opal/projects'
+PROJECTS=(CNSIM GEE SurvivalAnalysis)
+
+DATABASES_DIR='../data/opal/databases'
+DATABASES=(idsdb sqldb mongodb)
+
+TESTDATA_DIR='../data/opal/testdata'
+
+RSCRIPTS_DIR='../data/r'
+
+RSTUDIO='rstudio-server-0.98.501-i386.deb'
+DATASHIELD_USER='datashield'
+DATASHIELD_PASS='datashield'
+
+
+# functions
+check_root() {
+    (( EUID == 0 )) || ( echo "Error: Please run as root" && exit 1 )
+}
