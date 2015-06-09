@@ -1,6 +1,6 @@
 {
-    "name": "SurvivalAnalysis",
-    "title": "SurvivalAnalysis",
-    "description": "SurvivalAnalysis-testdata",
+    "name": "PER",
+    "title": "PER",
+    "description": "PER-testdata",
     "database": "mongodb"
 }

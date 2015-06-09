@@ -1,6 +1,6 @@
 {
-    "name": "GEE",
-    "title": "GEE",
+    "name": "GEEtest",
+    "title": "GEEtest",
     "description": "GEE-testdata",
     "database": "mongodb"
 }
