@@ -7,7 +7,7 @@ MYSQL_OPAL_PWD='opalpass'
 OPAL_PWD='password'
 
 PROJECT_DIR='../data/opal/projects'
-PROJECTS=(CNSIM SurvivalAnalysis)
+PROJECTS=(CNSIM)
 
 DATABASES_DIR='../data/opal/databases'
 DATABASES=(idsdb sqldb mongodb)
