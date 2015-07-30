@@ -9,29 +9,27 @@ These scripts borrow from the
 a temporary Opal and DataSHIELD VM, you might like to consider using vagrant
 instead of these scripts.
 
-## Contents
+## What do the scripts do?
 
 * Installs Opal
-* Creates three projects for the test data in Opal
-* Adds files for three sets of test data to Opal
-* Installs DataSHIELD server and client packages
-* Installs RStudio web interface (for using this server as a client)
-* TODO: There is no way to automatically upload a data dictionary into an Opal
-  Project. Data dictionaries and test data will available on Opal's file system
-  and the relevant projects will be created, but you must add the dictionaries
-  to those projects and import the data manually through the Opal web interface.
+* Creates three projects in Opal: CNSIM, DASIM, SURVIVAL.
+* Adds three sets of simulated data with data dictionaries for each project.
+* Installs DataSHIELD.
+* Installs RStudio web interface (for using the server as a client).
+* TODO: write script that uses the Opal API to upload data dictionaries.
 
 
 ## Usage
 
 While logged into a new install of 14.04:
 
-1. Download and extract the lastest release from the DataSHIELD
+1. Download and extract the lastest version from the DataSHIELD
 github
 
 ```
 $ wget -qO - https://github.com/datashield/opal-datashield-vm/archive/$VERSION.tar.gz | tar -xvz
 ```
+
 2. Switch to root and run the install script
 
 ```
@@ -39,3 +37,6 @@ $ sudo su
 # cd opal-datashield-vm-*
 # ./install.sh
 ```
+
+You may want to review install.sh and alter which components are installed.
+For example, deleting the line that runs the script to install RStudio.
