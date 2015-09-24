@@ -1,6 +1,6 @@
 {
     "name": "CNSIM",
     "title": "CNSIM",
-    "description": "CNSIM-testdata",
+    "description": "Simulated data",
     "database": "mongodb"
 }

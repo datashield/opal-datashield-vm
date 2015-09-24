@@ -1,6 +1,6 @@
 {
     "name": "DASIM",
     "title": "DASIM",
-    "description": "DASIM-testdata",
+    "description": "Simulated data",
     "database": "mongodb"
 }

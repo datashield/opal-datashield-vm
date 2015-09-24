@@ -1,6 +1,6 @@
 {
     "name": "SURVIVAL",
     "title": "SURVIVAL",
-    "description": "Survival test data",
+    "description": "Simulated data",
     "database": "mongodb"
 }
