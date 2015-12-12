@@ -32,11 +32,43 @@ msg1() {
 
 
 
+## === usage ===
+usage() {
+    cat << EOF
+Usage: ${0##*/} [ -o <pkg> ]
+
+Options
+    -o <pkg>    Install Opal from a file instead of using the OBiBa pkg
+                repo.
+EOF
+}
+
+
+
+# === Get script arguments ===
+while getopts :ho: opt
+do
+    case $opt in
+        h)  usage && exit 0
+            ;;
+        o)  _opal_pkg="$OPTARG"
+            #  Check this argument is a file
+            if [[ ! -f "${_opal_pkg}" ]]; then
+                msg0 "ERROR: ${_opal_pkg} is not a file"
+                exit 1
+            fi
+            ;;
+    esac
+done
+shift $((OPTIND-1))
+
+
+
 ## === variables ===
 install_scripts=(
                 00-add-obiba-stable-apt-repo.sh \
                 10-prepare-install-opal.sh \
-                20-install-opal.sh \
+                "20-install-opal.sh ${_opal_pkg}" \
                 30-create-opal-projects.sh \
                 31-copy-testdata-to-opal-fs.sh \
                 40-install-datashield.sh \
@@ -46,14 +78,18 @@ install_scripts=(
 
 
 ## === main ===
-if [[ ! -d log ]]; then mkdir "log"; fi
-cd scripts
-for i in ${install_scripts[@]}; do
-    msg0 "Running: ${i}"
-    if ./${i} > ../log/${i%%.*}.log 2>&1; then
-        msg1 "Success"
-    else
-        msg1 "Error: See log/${i%%.*}.log"
-        exit 1
-    fi
-done
+main() {
+
+    if [[ ! -d log ]]; then mkdir "log"; fi
+    cd scripts
+    for i in "${install_scripts[@]}"; do
+        msg0 "Running: ${i}"
+        if ./${i} > ../log/${i%%.*}.log 2>&1; then
+            msg1 "Success"
+        else
+            msg1 "Error: See log/${i%%.*}.log"
+            exit 1
+        fi
+    done
+}
+main

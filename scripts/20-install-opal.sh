@@ -24,7 +24,11 @@ check_root
 # Opal install
 echo opal opal-server/admin_password select $OPAL_PWD | debconf-set-selections
 echo opal opal-server/admin_password_again select $OPAL_PWD | debconf-set-selections
-apt-get install -y opal
+if [[ -z "$1" ]]; then
+    apt-get install -y opal
+else
+    dpkg -i "$1"
+fi
 apt-get install -y opal-python-client
 
 # R dependencies
