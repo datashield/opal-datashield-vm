@@ -11,7 +11,8 @@ instead of these scripts.
 
 ## What do the scripts do?
 
-* Installs Opal
+* Installs Opal (The most recently released version from ObiBa, or
+  optionally you can supply a .deb file for a development version.)
 * Creates three projects in Opal: CNSIM, DASIM, SURVIVAL.
 * Adds three sets of simulated data with data dictionaries for each project.
 * Installs DataSHIELD.
@@ -23,8 +24,8 @@ instead of these scripts.
 
 While logged into a new install of 14.04:
 
-1. Download and extract the lastest version from the DataSHIELD
-github
+1. Download and extract the latest version from the DataSHIELD
+GitHub
 
 ```
 $ wget -qO - https://github.com/datashield/opal-datashield-vm/archive/$VERSION.tar.gz | tar -xvz
@@ -38,5 +39,15 @@ $ sudo su
 # ./install.sh
 ```
 
-You may want to review install.sh and alter which components are installed.
-For example, deleting the line that runs the script to install RStudio.
+#### Notes:
+
+* You may want to review `install.sh` and alter which components are installed.
+  For example, deleting the line that runs the script to install RStudio.
+
+* If you wish to install a specific version of Opal by supplying a .deb file,
+  first copy the .deb file onto the VM, then the path to this file can be passed
+  as an argument to the `-o` option of `install.sh`:
+
+```
+# ./install.sh -o /path/to/opal.deb
+```

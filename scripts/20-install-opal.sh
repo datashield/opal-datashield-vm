@@ -28,7 +28,7 @@ if [[ -z "$1" ]]; then
     apt-get install -y opal
 else
     #  The 'daemon' package is a dependency of Opal, however dpkg does not
-    #  resolve dependcies.
+    #  resolve dependencies.
     apt-get install -y daemon
     dpkg -i "$1"
 fi
