@@ -2,7 +2,7 @@
 
 *This repository has been relaced by the new [DataSHIELD
 Infrastructure](https://github.com/datashield/datashield-infrastructure)
-repository*
+repository - specifically the datashield_testdata_ubuntu puppet environment is used for training VMs*
 
 
 #~~Scripts for installing Opal and DataSHIELD on an Ubuntu 14.04 i386 server.~~
